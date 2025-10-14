@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TigrinyaTolk | Interpreting Services</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+
+  <body class="font-sans text-gray-800">
+    <header class="bg-white shadow-md fixed w-full top-0 left-0 z-50">
+      <nav class="container mx-auto flex items-center justify-between py-4 px-6">
+        <div class="text-2xl font-semibold">TigrinyaTolk</div>
+        <ul class="hidden md:flex space-x-8">
+          <li><a href="#services" class="hover:text-blue-600">Services</a></li>
+          <li><a href="#interpreters" class="hover:text-blue-600">Interpreters</a></li>
+          <li><a href="#about" class="hover:text-blue-600">About</a></li>
+        </ul>
+        <a href="#contact" class="hidden md:block bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700">
+          Contact Us
+        </a>
+        <button id="menu-btn" class="md:hidden text-gray-600 text-2xl">&#9776;</button>
+      </nav>
+      <div id="mobile-menu" class="hidden bg-white border-t">
+        <ul class="flex flex-col items-center py-4 space-y-4">
+          <li><a href="#services">Services</a></li>
+          <li><a href="#interpreters">Interpreters</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#contact" class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700">Contact Us</a></li>
+        </ul>
+      </div>
+    </header>
+
+    <section class="h-screen bg-cover bg-center flex flex-col justify-center items-start text-white px-6 md:px-20"
+      style="background-image: url('assets/images/hero.jpg');">
+      <h1 class="text-4xl md:text-6xl font-bold max-w-2xl">Medium length hero headline goes here</h1>
+      <p class="mt-4 text-lg max-w-lg">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.
+      </p>
+      <a href="#contact" class="mt-6 bg-white text-blue-600 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100">
+        Get in Touch
+      </a>
+    </section>
+
+    <section class="py-20 px-6 md:px-20 bg-white">
+      <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-10 items-center">
+        <div>
+          <h2 class="text-3xl font-semibold mb-4">Professional interpreting services in Belgium</h2>
+          <p class="text-gray-600 mb-6">
+            Delivering accurate and nuanced language translation for international businesses and organizations. Bridging communication gaps with skill and precision.
+          </p>
+          <a href="#services" class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700">Explore</a>
+        </div>
+        <img src="assets/images/interpreting.jpg" alt="interpreting" class="rounded-xl shadow-md" />
+      </div>
+    </section>
+
+    <section id="services" class="py-20 bg-blue-50 px-6 md:px-20">
+      <div class="text-center mb-12">
+        <h3 class="text-blue-600 uppercase font-medium">Services</h3>
+        <h2 class="text-3xl font-bold mt-2">Comprehensive language interpretation solutions</h2>
+        <p class="mt-3 text-gray-600">
+          Providing specialized language services tailored to your specific communication needs.
+        </p>
+      </div>
+
+      <div class="grid gap-8 md:grid-cols-4 max-w-6xl mx-auto">
+        <div class="bg-white p-6 rounded-xl shadow text-center">
+          <div class="w-16 h-16 mx-auto bg-gray-200 rounded-lg mb-4"></div>
+          <h4 class="font-semibold mb-2">Web-Cam</h4>
+          <p class="text-gray-600 text-sm">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        </div>
+        <div class="bg-white p-6 rounded-xl shadow text-center">
+          <div class="w-16 h-16 mx-auto bg-gray-200 rounded-lg mb-4"></div>
+          <h4 class="font-semibold mb-2">On Place</h4>
+          <p class="text-gray-600 text-sm">Suspendisse varius enim in eros elementum tristique.</p>
+        </div>
+        <div class="bg-white p-6 rounded-xl shadow text-center">
+          <div class="w-16 h-16 mx-auto bg-gray-200 rounded-lg mb-4"></div>
+          <h4 class="font-semibold mb-2">Telephone</h4>
+          <p class="text-gray-600 text-sm">Mauris non tempor quam, et lacinia sapien.</p>
+        </div>
+        <div class="bg-white p-6 rounded-xl shadow text-center">
+          <div class="w-16 h-16 mx-auto bg-gray-200 rounded-lg mb-4"></div>
+          <h4 class="font-semibold mb-2">Document</h4>
+          <p class="text-gray-600 text-sm">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-20 px-6 md:px-20 bg-white">
+      <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+        <img src="assets/images/team.jpg" alt="team" class="rounded-xl shadow-md" />
+        <div>
+          <div class="mb-6">
+            <h4 class="font-semibold text-lg">Accuracy matters</h4>
+            <p class="text-gray-600">Precise translation ensuring every word and nuance is correctly understood.</p>
+          </div>
+          <div class="mb-6">
+            <h4 class="font-semibold text-lg">Cultural understanding</h4>
+            <p class="text-gray-600">Deep knowledge of cultural contexts that goes beyond literal translation.</p>
+          </div>
+          <div>
+            <h4 class="font-semibold text-lg">Complete confidentiality</h4>
+            <p class="text-gray-600">Guaranteed privacy and professional handling of sensitive communication.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="interpreters" class="py-20 bg-blue-50 px-6 md:px-20">
+      <div class="max-w-6xl mx-auto">
+        <h3 class="text-blue-600 uppercase font-medium">Professional</h3>
+        <h2 class="text-3xl font-bold mt-2 mb-12">Meet the interpreter</h2>
+
+        <div class="grid md:grid-cols-2 gap-10">
+          <div>
+            <h4 class="font-semibold text-lg">Shishay Tewen</h4>
+            <p class="text-sm text-gray-600">Sworn Interpreter</p>
+            <p class="mt-2 text-gray-600">France ⇔ Tigrinya<br />Tigrinya ⇔ French<br />Netherlands ⇔ Tigrinya</p>
+          </div>
+          <div>
+            <h4 class="font-semibold text-lg">Goitom Filmon</h4>
+            <p class="text-sm text-gray-600">Social Interpreter</p>
+            <p class="mt-2 text-gray-600">English ⇔ Tigrinya<br />Tigrinya ⇔ English</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer id="contact" class="bg-gray-100 py-10 px-6 md:px-20">
+      <div class="max-w-6xl mx-auto grid md:grid-cols-3 gap-10">
+        <div>
+          <h3 class="text-2xl font-semibold mb-3">TigrinyaTolk</h3>
+          <p class="text-gray-600">TigrinyaTolk Interpreting Services</p>
+        </div>
+
+        <div>
+          <h4 class="font-semibold mb-2">Contact</h4>
+          <p>Phone: <a href="tel:+3204555555" class="text-blue-600">+32 0455 555 555</a></p>
+          <p>Email: <a href="mailto:example@gmail.com" class="text-blue-600">example@gmail.com</a></p>
+        </div>
+
+        <div>
+          <h4 class="font-semibold mb-2">Quick Links</h4>
+          <ul class="text-gray-600 space-y-2">
+            <li><a href="#services" class="hover:text-blue-600">Services</a></li>
+            <li><a href="#interpreters" class="hover:text-blue-600">Interpreters</a></li>
+            <li><a href="#about" class="hover:text-blue-600">About</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="text-center text-sm text-gray-500 mt-10">
+        © 2025 TigrinyaTolk Interpreting Services. All rights reserved.
+      </div>
+    </footer>
+
+    <script>
+      const menuBtn = document.getElementById("menu-btn");
+      const mobileMenu = document.getElementById("mobile-menu");
+      menuBtn.addEventListener("click", () => {
+        mobileMenu.classList.toggle("hidden");
+      });
+    </script>
+  </body>
+</html>
