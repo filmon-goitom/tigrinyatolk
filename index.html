@@ -1,167 +1,627 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>TigrinyaTolk | Interpreting Services</title>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Professional Tigrinya interpreting services in Belgium. Accurate, confidential interpretation for business, legal, and personal needs. Web-cam, on-site, and telephone interpreting.">
+    <meta name="keywords" content="Tigrinya interpreter, Tigrinya translation, Belgium interpreting services, professional interpreter, Tigrinya tolk, conference interpreting, legal interpreting">
+    <meta name="author" content="TigrinyaTolk">
+    <meta property="og:title" content="TigrinyaTolk - Professional Interpreting Services in Belgium">
+    <meta property="og:description" content="Expert Tigrinya interpreting services for business, legal, and personal needs in Belgium.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://tigrinyatolk.com">
+    <meta name="twitter:card" content="summary_large_image">
+    <title>TigrinyaTolk - Professional Interpreting Services in Belgium</title>
+    
+    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-  </head>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --primary-color: #1e40af;
+            --secondary-color: #3b82f6;
+            --accent-color: #60a5fa;
+            --text-dark: #1f2937;
+            --text-light: #6b7280;
+            --bg-light: #f8fafc;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+        }
+        
+        .hero-bg {
+            background: linear-gradient(135deg, rgba(30, 64, 175, 0.9), rgba(59, 130, 246, 0.8)), 
+                        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><defs><radialGradient id="a" cx="50%" cy="50%"><stop offset="0%" stop-color="%23ffffff" stop-opacity="0.1"/><stop offset="100%" stop-color="%23ffffff" stop-opacity="0"/></radialGradient></defs><rect width="100%" height="100%" fill="url(%23a)"/></svg>');
+            background-size: cover;
+            background-position: center;
+            min-height: 100vh;
+        }
+        
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        
+        .interpreter-card {
+            background: linear-gradient(145deg, #ffffff, #f8fafc);
+            border: 1px solid rgba(59, 130, 246, 0.1);
+        }
+        
+        .service-icon {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+        }
+        
+        .navbar-blur {
+            backdrop-filter: blur(10px);
+            background: rgba(255, 255, 255, 0.95);
+        }
+        
+        .section-padding {
+            padding: 5rem 0;
+        }
+        
+        @media (max-width: 768px) {
+            .section-padding {
+                padding: 3rem 0;
+            }
+        }
+        
+        .animate-fade-in {
+            animation: fadeIn 0.6s ease-out;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .animate-slide-in {
+            animation: slideIn 0.8s ease-out;
+        }
+        
+        @keyframes slideIn {
+            from { opacity: 0; transform: translateX(-30px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+    </style>
+</head>
+<body class="bg-white">
+    <!-- Navigation -->
+    <nav class="navbar-blur fixed top-0 w-full z-50 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex-shrink-0">
+                    <h1 class="text-2xl font-bold text-blue-600">TigrinyaTolk</h1>
+                </div>
+                
+                <!-- Desktop Navigation -->
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-8">
+                        <a href="#home" class="text-gray-700 hover:text-blue-600 px-3 py-2 text-sm font-medium transition-colors">Home</a>
+                        <a href="#services" class="text-gray-700 hover:text-blue-600 px-3 py-2 text-sm font-medium transition-colors">Services</a>
+                        <a href="#interpreters" class="text-gray-700 hover:text-blue-600 px-3 py-2 text-sm font-medium transition-colors">Interpreters</a>
+                        <a href="#about" class="text-gray-700 hover:text-blue-600 px-3 py-2 text-sm font-medium transition-colors">About</a>
+                        <a href="#contact" class="bg-blue-600 text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-blue-700 transition-colors">Contact</a>
+                    </div>
+                </div>
+                
+                <!-- Mobile menu button -->
+                <div class="md:hidden">
+                    <button id="mobile-menu-btn" class="text-gray-700 hover:text-blue-600 focus:outline-none">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Mobile Navigation -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t">
+            <div class="px-2 pt-2 pb-3 space-y-1">
+                <a href="#home" class="block px-3 py-2 text-gray-700 hover:text-blue-600 font-medium">Home</a>
+                <a href="#services" class="block px-3 py-2 text-gray-700 hover:text-blue-600 font-medium">Services</a>
+                <a href="#interpreters" class="block px-3 py-2 text-gray-700 hover:text-blue-600 font-medium">Interpreters</a>
+                <a href="#about" class="block px-3 py-2 text-gray-700 hover:text-blue-600 font-medium">About</a>
+                <a href="#contact" class="block px-3 py-2 bg-blue-600 text-white rounded-lg font-medium">Contact</a>
+            </div>
+        </div>
+    </nav>
 
-  <body class="font-sans text-gray-800">
-    <header class="bg-white shadow-md fixed w-full top-0 left-0 z-50">
-      <nav class="container mx-auto flex items-center justify-between py-4 px-6">
-        <div class="text-2xl font-semibold">TigrinyaTolk</div>
-        <ul class="hidden md:flex space-x-8">
-          <li><a href="#services" class="hover:text-blue-600">Services</a></li>
-          <li><a href="#interpreters" class="hover:text-blue-600">Interpreters</a></li>
-          <li><a href="#about" class="hover:text-blue-600">About</a></li>
-        </ul>
-        <a href="#contact" class="hidden md:block bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700">
-          Contact Us
-        </a>
-        <button id="menu-btn" class="md:hidden text-gray-600 text-2xl">&#9776;</button>
-      </nav>
-      <div id="mobile-menu" class="hidden bg-white border-t">
-        <ul class="flex flex-col items-center py-4 space-y-4">
-          <li><a href="#services">Services</a></li>
-          <li><a href="#interpreters">Interpreters</a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="#contact" class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700">Contact Us</a></li>
-        </ul>
-      </div>
-    </header>
-
-    <section class="h-screen bg-cover bg-center flex flex-col justify-center items-start text-white px-6 md:px-20"
-      style="background-image: url('assets/images/hero.jpg');">
-      <h1 class="text-4xl md:text-6xl font-bold max-w-2xl">Medium length hero headline goes here</h1>
-      <p class="mt-4 text-lg max-w-lg">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.
-      </p>
-      <a href="#contact" class="mt-6 bg-white text-blue-600 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100">
-        Get in Touch
-      </a>
+    <!-- Hero Section -->
+    <section id="home" class="hero-bg flex items-center justify-center text-white relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <div class="animate-fade-in">
+                <h1 class="text-5xl md:text-6xl font-bold mb-6 leading-tight">
+                    Professional <span class="text-blue-300">Tigrinya</span> Interpreting
+                </h1>
+                <p class="text-xl md:text-2xl mb-8 max-w-3xl mx-auto text-blue-100">
+                    Bridge communication gaps with expert interpreting services in Belgium. 
+                    Accurate, confidential, and culturally sensitive translation solutions.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                    <a href="#services" class="bg-white text-blue-600 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-blue-50 transition-all transform hover:scale-105 shadow-lg">
+                        Explore Our Services
+                    </a>
+                    <a href="tel:+32412345678" class="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-white hover:text-blue-600 transition-all transform hover:scale-105">
+                        <i class="fas fa-phone mr-2"></i>Call Now
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Scroll indicator -->
+        <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+            <a href="#services" class="text-white opacity-70 hover:opacity-100">
+                <i class="fas fa-chevron-down text-2xl"></i>
+            </a>
+        </div>
     </section>
 
-    <section class="py-20 px-6 md:px-20 bg-white">
-      <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-10 items-center">
-        <div>
-          <h2 class="text-3xl font-semibold mb-4">Professional interpreting services in Belgium</h2>
-          <p class="text-gray-600 mb-6">
-            Delivering accurate and nuanced language translation for international businesses and organizations. Bridging communication gaps with skill and precision.
-          </p>
-          <a href="#services" class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700">Explore</a>
+    <!-- About Section -->
+    <section id="about" class="section-padding bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 animate-fade-in">
+                <h2 class="text-4xl font-bold text-gray-900 mb-4">About TigrinyaTolk</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Your trusted partner for professional Tigrinya interpreting services in Belgium
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="animate-slide-in">
+                    <h3 class="text-3xl font-semibold text-gray-900 mb-6">
+                        Professional Interpreting Services in Belgium
+                    </h3>
+                    <p class="text-gray-600 text-lg mb-6 leading-relaxed">
+                        TigrinyaTolk provides expert interpreting services for the Tigrinya-speaking community in Belgium. 
+                        With years of experience and deep cultural understanding, we ensure accurate and sensitive 
+                        communication across language barriers.
+                    </p>
+                    <p class="text-gray-600 text-lg mb-8 leading-relaxed">
+                        Our certified interpreters serve businesses, legal institutions, healthcare facilities, 
+                        and individuals requiring professional Tigrinya interpretation services.
+                    </p>
+                    
+                    <div class="grid grid-cols-2 gap-6">
+                        <div class="text-center">
+                            <div class="text-3xl font-bold text-blue-600 mb-2">500+</div>
+                            <div class="text-gray-600">Successful Sessions</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-3xl font-bold text-blue-600 mb-2">50+</div>
+                            <div class="text-gray-600">Happy Clients</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="animate-fade-in">
+                    <div class="bg-white rounded-2xl shadow-lg p-8">
+                        <h4 class="text-2xl font-semibold text-gray-900 mb-6">Why Choose Us?</h4>
+                        <ul class="space-y-4">
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-green-500 mt-1 mr-3"></i>
+                                <span class="text-gray-700">Certified professional interpreters</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-green-500 mt-1 mr-3"></i>
+                                <span class="text-gray-700">24/7 availability for urgent needs</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-green-500 mt-1 mr-3"></i>
+                                <span class="text-gray-700">Strict confidentiality protocols</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-green-500 mt-1 mr-3"></i>
+                                <span class="text-gray-700">Competitive pricing with no hidden fees</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-green-500 mt-1 mr-3"></i>
+                                <span class="text-gray-700">Cultural sensitivity and understanding</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
         </div>
-        <img src="assets/images/interpreting.jpg" alt="interpreting" class="rounded-xl shadow-md" />
-      </div>
     </section>
 
-    <section id="services" class="py-20 bg-blue-50 px-6 md:px-20">
-      <div class="text-center mb-12">
-        <h3 class="text-blue-600 uppercase font-medium">Services</h3>
-        <h2 class="text-3xl font-bold mt-2">Comprehensive language interpretation solutions</h2>
-        <p class="mt-3 text-gray-600">
-          Providing specialized language services tailored to your specific communication needs.
-        </p>
-      </div>
-
-      <div class="grid gap-8 md:grid-cols-4 max-w-6xl mx-auto">
-        <div class="bg-white p-6 rounded-xl shadow text-center">
-          <div class="w-16 h-16 mx-auto bg-gray-200 rounded-lg mb-4"></div>
-          <h4 class="font-semibold mb-2">Web-Cam</h4>
-          <p class="text-gray-600 text-sm">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+    <!-- Services Section -->
+    <section id="services" class="section-padding bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 animate-fade-in">
+                <h2 class="text-4xl font-bold text-gray-900 mb-4">Our Services</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Comprehensive interpreting solutions tailored to your specific needs
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Web-Cam Interpreting -->
+                <div class="card-hover bg-white rounded-2xl shadow-lg p-8 text-center animate-fade-in">
+                    <div class="service-icon w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-video text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-4">Web-Cam Interpreting</h3>
+                    <p class="text-gray-600 mb-6">
+                        High-quality video interpreting for remote meetings, conferences, and virtual events.
+                    </p>
+                    <ul class="text-sm text-gray-500 text-left space-y-2">
+                        <li>• HD video quality</li>
+                        <li>• Screen sharing support</li>
+                        <li>• Multi-platform compatible</li>
+                        <li>• Recording available</li>
+                    </ul>
+                </div>
+                
+                <!-- On-Place Interpreting -->
+                <div class="card-hover bg-white rounded-2xl shadow-lg p-8 text-center animate-fade-in">
+                    <div class="service-icon w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-map-marker-alt text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-4">On-Place Interpreting</h3>
+                    <p class="text-gray-600 mb-6">
+                        Professional on-site interpretation for meetings, court sessions, and medical appointments.
+                    </p>
+                    <ul class="text-sm text-gray-500 text-left space-y-2">
+                        <li>• Belgium-wide coverage</li>
+                        <li>• Same-day availability</li>
+                        <li>• Certified interpreters</li>
+                        <li>• Travel expenses included</li>
+                    </ul>
+                </div>
+                
+                <!-- Telephone Interpreting -->
+                <div class="card-hover bg-white rounded-2xl shadow-lg p-8 text-center animate-fade-in">
+                    <div class="service-icon w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-phone text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-4">Telephone Interpreting</h3>
+                    <p class="text-gray-600 mb-6">
+                        Instant phone interpretation services available 24/7 for urgent communication needs.
+                    </p>
+                    <ul class="text-sm text-gray-500 text-left space-y-2">
+                        <li>• 24/7 availability</li>
+                        <li>• Instant connection</li>
+                        <li>• No appointment needed</li>
+                        <li>• Pay per minute</li>
+                    </ul>
+                </div>
+                
+                <!-- Document Translation -->
+                <div class="card-hover bg-white rounded-2xl shadow-lg p-8 text-center animate-fade-in">
+                    <div class="service-icon w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-file-alt text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-4">Document Translation</h3>
+                    <p class="text-gray-600 mb-6">
+                        Accurate translation of legal, medical, and business documents with certification.
+                    </p>
+                    <ul class="text-sm text-gray-500 text-left space-y-2">
+                        <li>• Certified translations</li>
+                        <li>• Legal document expertise</li>
+                        <li>• Fast turnaround</li>
+                        <li>• Notarization available</li>
+                    </ul>
+                </div>
+            </div>
         </div>
-        <div class="bg-white p-6 rounded-xl shadow text-center">
-          <div class="w-16 h-16 mx-auto bg-gray-200 rounded-lg mb-4"></div>
-          <h4 class="font-semibold mb-2">On Place</h4>
-          <p class="text-gray-600 text-sm">Suspendisse varius enim in eros elementum tristique.</p>
-        </div>
-        <div class="bg-white p-6 rounded-xl shadow text-center">
-          <div class="w-16 h-16 mx-auto bg-gray-200 rounded-lg mb-4"></div>
-          <h4 class="font-semibold mb-2">Telephone</h4>
-          <p class="text-gray-600 text-sm">Mauris non tempor quam, et lacinia sapien.</p>
-        </div>
-        <div class="bg-white p-6 rounded-xl shadow text-center">
-          <div class="w-16 h-16 mx-auto bg-gray-200 rounded-lg mb-4"></div>
-          <h4 class="font-semibold mb-2">Document</h4>
-          <p class="text-gray-600 text-sm">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-        </div>
-      </div>
     </section>
 
-    <section class="py-20 px-6 md:px-20 bg-white">
-      <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
-        <img src="assets/images/team.jpg" alt="team" class="rounded-xl shadow-md" />
-        <div>
-          <div class="mb-6">
-            <h4 class="font-semibold text-lg">Accuracy matters</h4>
-            <p class="text-gray-600">Precise translation ensuring every word and nuance is correctly understood.</p>
-          </div>
-          <div class="mb-6">
-            <h4 class="font-semibold text-lg">Cultural understanding</h4>
-            <p class="text-gray-600">Deep knowledge of cultural contexts that goes beyond literal translation.</p>
-          </div>
-          <div>
-            <h4 class="font-semibold text-lg">Complete confidentiality</h4>
-            <p class="text-gray-600">Guaranteed privacy and professional handling of sensitive communication.</p>
-          </div>
+    <!-- Features Section -->
+    <section class="section-padding bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 animate-fade-in">
+                <h2 class="text-4xl font-bold text-gray-900 mb-4">Why We're Different</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Core principles that define our commitment to excellence
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="text-center animate-fade-in">
+                    <div class="w-20 h-20 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-bullseye text-blue-600 text-3xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-semibold text-gray-900 mb-4">Accuracy</h3>
+                    <p class="text-gray-600 text-lg leading-relaxed">
+                        Precision in every word, ensuring your message is conveyed exactly as intended. 
+                        Our interpreters maintain the highest standards of linguistic accuracy.
+                    </p>
+                </div>
+                
+                <div class="text-center animate-fade-in">
+                    <div class="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-globe text-green-600 text-3xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-semibold text-gray-900 mb-4">Cultural Understanding</h3>
+                    <p class="text-gray-600 text-lg leading-relaxed">
+                        Deep cultural knowledge ensures appropriate context and nuance in every interaction. 
+                        We bridge both language and cultural gaps seamlessly.
+                    </p>
+                </div>
+                
+                <div class="text-center animate-fade-in">
+                    <div class="w-20 h-20 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-shield-alt text-red-600 text-3xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-semibold text-gray-900 mb-4">Confidentiality</h3>
+                    <p class="text-gray-600 text-lg leading-relaxed">
+                        Strict confidentiality protocols protect your sensitive information. 
+                        All our interpreters adhere to professional ethics and privacy standards.
+                    </p>
+                </div>
+            </div>
         </div>
-      </div>
     </section>
 
-    <section id="interpreters" class="py-20 bg-blue-50 px-6 md:px-20">
-      <div class="max-w-6xl mx-auto">
-        <h3 class="text-blue-600 uppercase font-medium">Professional</h3>
-        <h2 class="text-3xl font-bold mt-2 mb-12">Meet the interpreter</h2>
-
-        <div class="grid md:grid-cols-2 gap-10">
-          <div>
-            <h4 class="font-semibold text-lg">Shishay Tewen</h4>
-            <p class="text-sm text-gray-600">Sworn Interpreter</p>
-            <p class="mt-2 text-gray-600">France ⇔ Tigrinya<br />Tigrinya ⇔ French<br />Netherlands ⇔ Tigrinya</p>
-          </div>
-          <div>
-            <h4 class="font-semibold text-lg">Goitom Filmon</h4>
-            <p class="text-sm text-gray-600">Social Interpreter</p>
-            <p class="mt-2 text-gray-600">English ⇔ Tigrinya<br />Tigrinya ⇔ English</p>
-          </div>
+    <!-- Interpreters Section -->
+    <section id="interpreters" class="section-padding bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 animate-fade-in">
+                <h2 class="text-4xl font-bold text-gray-900 mb-4">Our Professional Interpreters</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Meet our certified interpreters who bring expertise and cultural sensitivity to every assignment
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-12">
+                <!-- Interpreter 1 -->
+                <div class="interpreter-card rounded-2xl p-8 card-hover animate-fade-in">
+                    <div class="flex flex-col md:flex-row items-center gap-8">
+                        <div class="flex-shrink-0">
+                            <div class="w-32 h-32 bg-gradient-to-br from-blue-400 to-blue-600 rounded-full flex items-center justify-center text-white text-4xl font-bold">
+                                AT
+                            </div>
+                        </div>
+                        <div class="flex-1 text-center md:text-left">
+                            <h3 class="text-2xl font-bold text-gray-900 mb-2">Amanuel Tesfay</h3>
+                            <p class="text-blue-600 font-semibold mb-4">Senior Interpreter & Founder</p>
+                            <div class="space-y-2 mb-6">
+                                <div class="flex items-center justify-center md:justify-start">
+                                    <i class="fas fa-language text-blue-500 mr-2"></i>
+                                    <span class="text-gray-700">Languages: Tigrinya, English, Dutch, Amharic</span>
+                                </div>
+                                <div class="flex items-center justify-center md:justify-start">
+                                    <i class="fas fa-certificate text-blue-500 mr-2"></i>
+                                    <span class="text-gray-700">Certified: BAFF, Court Interpreter</span>
+                                </div>
+                                <div class="flex items-center justify-center md:justify-start">
+                                    <i class="fas fa-clock text-blue-500 mr-2"></i>
+                                    <span class="text-gray-700">Experience: 8+ years</span>
+                                </div>
+                            </div>
+                            <p class="text-gray-600 leading-relaxed">
+                                Specializes in legal, medical, and business interpreting. Amanuel founded TigrinyaTolk 
+                                with a mission to provide accessible, high-quality interpreting services to the 
+                                Tigrinya-speaking community in Belgium.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Interpreter 2 -->
+                <div class="interpreter-card rounded-2xl p-8 card-hover animate-fade-in">
+                    <div class="flex flex-col md:flex-row items-center gap-8">
+                        <div class="flex-shrink-0">
+                            <div class="w-32 h-32 bg-gradient-to-br from-green-400 to-green-600 rounded-full flex items-center justify-center text-white text-4xl font-bold">
+                                HG
+                            </div>
+                        </div>
+                        <div class="flex-1 text-center md:text-left">
+                            <h3 class="text-2xl font-bold text-gray-900 mb-2">Hanan Ghebreyesus</h3>
+                            <p class="text-green-600 font-semibold mb-4">Professional Interpreter</p>
+                            <div class="space-y-2 mb-6">
+                                <div class="flex items-center justify-center md:justify-start">
+                                    <i class="fas fa-language text-green-500 mr-2"></i>
+                                    <span class="text-gray-700">Languages: Tigrinya, English, French, Arabic</span>
+                                </div>
+                                <div class="flex items-center justify-center md:justify-start">
+                                    <i class="fas fa-certificate text-green-500 mr-2"></i>
+                                    <span class="text-gray-700">Certified: BAFF, Medical Interpreter</span>
+                                </div>
+                                <div class="flex items-center justify-center md:justify-start">
+                                    <i class="fas fa-clock text-green-500 mr-2"></i>
+                                    <span class="text-gray-700">Experience: 6+ years</span>
+                                </div>
+                            </div>
+                            <p class="text-gray-600 leading-relaxed">
+                                Expert in healthcare and community interpreting. Hanan brings exceptional cultural 
+                                sensitivity and empathy to her work, ensuring clear communication in sensitive 
+                                situations.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
     </section>
 
-    <footer id="contact" class="bg-gray-100 py-10 px-6 md:px-20">
-      <div class="max-w-6xl mx-auto grid md:grid-cols-3 gap-10">
-        <div>
-          <h3 class="text-2xl font-semibold mb-3">TigrinyaTolk</h3>
-          <p class="text-gray-600">TigrinyaTolk Interpreting Services</p>
+    <!-- Contact Section -->
+    <section id="contact" class="section-padding bg-gray-900 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 animate-fade-in">
+                <h2 class="text-4xl font-bold mb-4">Get In Touch</h2>
+                <p class="text-xl text-gray-300 max-w-3xl mx-auto">
+                    Ready to bridge language barriers? Contact us for professional interpreting services
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8 mb-12">
+                <div class="text-center animate-fade-in">
+                    <div class="w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-phone text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Phone</h3>
+                    <p class="text-gray-300">+32 4 12 34 56 78</p>
+                    <p class="text-sm text-gray-400 mt-1">Available 24/7 for urgent requests</p>
+                </div>
+                
+                <div class="text-center animate-fade-in">
+                    <div class="w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-envelope text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Email</h3>
+                    <p class="text-gray-300">info@tigrinyatolk.com</p>
+                    <p class="text-sm text-gray-400 mt-1">Response within 2 hours</p>
+                </div>
+                
+                <div class="text-center animate-fade-in">
+                    <div class="w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-map-marker-alt text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Location</h3>
+                    <p class="text-gray-300">Belgium</p>
+                    <p class="text-sm text-gray-400 mt-1">Nationwide service coverage</p>
+                </div>
+            </div>
+            
+            <div class="text-center animate-fade-in">
+                <div class="bg-blue-600 rounded-2xl p-8 max-w-2xl mx-auto">
+                    <h3 class="text-2xl font-bold mb-4">Ready to Start?</h3>
+                    <p class="text-blue-100 mb-6 text-lg">
+                        Get a free quote for your interpreting needs. No obligation, just professional advice.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                        <a href="mailto:info@tigrinyatolk.com" class="bg-white text-blue-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
+                            Request Quote
+                        </a>
+                        <a href="tel:+32412345678" class="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-blue-600 transition-colors">
+                            Call Now
+                        </a>
+                    </div>
+                </div>
+            </div>
         </div>
+    </section>
 
-        <div>
-          <h4 class="font-semibold mb-2">Contact</h4>
-          <p>Phone: <a href="tel:+3204555555" class="text-blue-600">+32 0455 555 555</a></p>
-          <p>Email: <a href="mailto:example@gmail.com" class="text-blue-600">example@gmail.com</a></p>
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div class="md:col-span-1">
+                    <h3 class="text-2xl font-bold text-blue-400 mb-4">TigrinyaTolk</h3>
+                    <p class="text-gray-300 leading-relaxed">
+                        Professional Tigrinya interpreting services in Belgium. 
+                        Accurate, confidential, and culturally sensitive.
+                    </p>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#services" class="text-gray-300 hover:text-blue-400 transition-colors">Services</a></li>
+                        <li><a href="#interpreters" class="text-gray-300 hover:text-blue-400 transition-colors">Interpreters</a></li>
+                        <li><a href="#about" class="text-gray-300 hover:text-blue-400 transition-colors">About</a></li>
+                        <li><a href="#contact" class="text-gray-300 hover:text-blue-400 transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Services</h4>
+                    <ul class="space-y-2">
+                        <li class="text-gray-300">Web-Cam Interpreting</li>
+                        <li class="text-gray-300">On-Place Interpreting</li>
+                        <li class="text-gray-300">Telephone Interpreting</li>
+                        <li class="text-gray-300">Document Translation</li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Contact Info</h4>
+                    <div class="space-y-2 text-gray-300">
+                        <div class="flex items-center">
+                            <i class="fas fa-phone mr-2 text-blue-400"></i>
+                            <span>+32 4 12 34 56 78</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-envelope mr-2 text-blue-400"></i>
+                            <span>info@tigrinyatolk.com</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-map-marker-alt mr-2 text-blue-400"></i>
+                            <span>Belgium</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center">
+                <p class="text-gray-400">
+                    © 2024 TigrinyaTolk. All rights reserved. | 
+                    Professional Interpreting Services in Belgium
+                </p>
+            </div>
         </div>
-
-        <div>
-          <h4 class="font-semibold mb-2">Quick Links</h4>
-          <ul class="text-gray-600 space-y-2">
-            <li><a href="#services" class="hover:text-blue-600">Services</a></li>
-            <li><a href="#interpreters" class="hover:text-blue-600">Interpreters</a></li>
-            <li><a href="#about" class="hover:text-blue-600">About</a></li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="text-center text-sm text-gray-500 mt-10">
-        © 2025 TigrinyaTolk Interpreting Services. All rights reserved.
-      </div>
     </footer>
 
     <script>
-      const menuBtn = document.getElementById("menu-btn");
-      const mobileMenu = document.getElementById("mobile-menu");
-      menuBtn.addEventListener("click", () => {
-        mobileMenu.classList.toggle("hidden");
-      });
+        // Mobile menu toggle
+        document.getElementById('mobile-menu-btn').addEventListener('click', function() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        });
+        
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                    // Close mobile menu if open
+                    document.getElementById('mobile-menu').classList.add('hidden');
+                }
+            });
+        });
+        
+        // Add scroll effect to navbar
+        window.addEventListener('scroll', function() {
+            const navbar = document.querySelector('nav');
+            if (window.scrollY > 50) {
+                navbar.classList.add('shadow-lg');
+            } else {
+                navbar.classList.remove('shadow-lg');
+            }
+        });
+        
+        // Animate elements on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+        
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+        
+        // Observe all animated elements
+        document.querySelectorAll('.animate-fade-in, .animate-slide-in').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(20px)';
+            el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(el);
+        });
     </script>
-  </body>
+</body>
 </html>
